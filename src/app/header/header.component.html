@@ -1,0 +1,50 @@
+<!-- 
+<div class="container">
+    <div class="row">
+        <div class="col-6">Filters</div>
+        <div class="col-6 mr-auto">
+            <img src="assets/down-arrow-icon.png" alt="" width="15px">
+        </div>
+    </div>
+    <div class="row bg-light">
+        <div class="col-12">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        </div>
+
+    </div>
+    <div class="row bg-light">
+        <div class="col-6">
+            <p>sort by : {{ sortby }}</p>
+        </div>
+        <div class="col-6">
+            <label class="switch mr-auto">
+                <input type="checkbox" (click)="switchCheckBox()">
+                <span class="slider round"></span>
+
+            </label>
+        </div>
+    </div>
+</div> -->
+
+<div class="container bg-light">
+    <div class="row">
+        <div class="col-6">Filters</div>
+        <div class="col-6"><img src="assets/down-arrow-icon.png" width="15px" alt=""></div>
+    </div>
+
+    <div class="row bg-light">
+        <div class="col-6">
+            <p>sort by : {{ sortby }}</p>
+        </div>
+        <div class="col-6">
+            <label class="switch mr-auto">
+                <input type="checkbox" (click)="switchCheckBox()">
+                <span class="slider round"></span>
+
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <app-hero-search></app-hero-search>
+    </div>
+</div>
