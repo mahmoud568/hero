@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Hero } from './heroes/hero';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'U-N-I-S-H-F';
    sortBy: string;
+   selectedHero: Hero;
   
   changeSort(event: string) {
   this.sortBy = event;
+  }
+
+  selecteHero(hero: Hero){
+    this.selectedHero = hero;
+    
   }
 }

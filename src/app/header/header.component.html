@@ -1,50 +1,46 @@
 <!-- 
-<div class="container">
-    <div class="row">
-        <div class="col-6">Filters</div>
-        <div class="col-6 mr-auto">
-            <img src="assets/down-arrow-icon.png" alt="" width="15px">
-        </div>
-    </div>
-    <div class="row bg-light">
-        <div class="col-12">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        </div>
-
-    </div>
-    <div class="row bg-light">
-        <div class="col-6">
-            <p>sort by : {{ sortby }}</p>
-        </div>
-        <div class="col-6">
-            <label class="switch mr-auto">
-                <input type="checkbox" (click)="switchCheckBox()">
-                <span class="slider round"></span>
-
-            </label>
-        </div>
-    </div>
-</div> -->
-
 <div class="container bg-light">
     <div class="row">
         <div class="col-6">Filters</div>
         <div class="col-6"><img src="assets/down-arrow-icon.png" width="15px" alt=""></div>
     </div>
 
-    <div class="row bg-light">
-        <div class="col-6">
-            <p>sort by : {{ sortby }}</p>
-        </div>
-        <div class="col-6">
-            <label class="switch mr-auto">
-                <input type="checkbox" (click)="switchCheckBox()">
-                <span class="slider round"></span>
+    
+    
+</div> -->
 
-            </label>
+<nav class="navbar navbar-expand navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown">
+                    Filters
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+
+        </ul>
+        <div class="row bg-light mr-auto  pt-4">
+            <div class="col-6">
+                <p class="sortBy">sort by : {{ sortby }}</p>
+            </div>
+            <div class="col-6">
+                <label class="switch ">
+                    <input type="checkbox" (click)="switchCheckBox()">
+                    <span class="slider round"></span>
+
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <app-hero-search (selectedHero)="selecteHero($event)"></app-hero-search>
         </div>
     </div>
-    <div class="row">
-        <app-hero-search></app-hero-search>
-    </div>
-</div>
+</nav>

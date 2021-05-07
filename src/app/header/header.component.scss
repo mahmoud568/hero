@@ -1,8 +1,10 @@
 // chech switcher style
-.container {
+nav {
+  top: -10px;
+  .sortBy {
+    width: 110px;
+  }
   .row {
-    margin-bottom: 20px;
-
     .switch {
       position: relative;
       display: inline-block;

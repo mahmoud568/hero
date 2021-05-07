@@ -13,7 +13,7 @@ export class HeroesComponent implements OnInit, OnChanges{
   @Input() passedSort :string;
   
 
-  selectedHero: Hero;
+  @Input() selectedHero: Hero;
 
   constructor(private heroService: HeroService) { }
 
@@ -22,7 +22,6 @@ export class HeroesComponent implements OnInit, OnChanges{
   }
   ngOnChanges() {
     if(this.passedSort != null) {
-
       this.sortHeroes(this.passedSort);
     }
   }
@@ -45,7 +44,6 @@ export class HeroesComponent implements OnInit, OnChanges{
   onSelect(hero: Hero){
     this.selectedHero = hero;
     this.heroRate = hero.rate;
-    console.log(this.selectedHero);
   }
 
   // stars=[1,2,3,4,5];

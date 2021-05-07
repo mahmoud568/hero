@@ -11,7 +11,18 @@ export class HeroService {
 
   constructor() { }
 
+  // search by name
+  // searchHeroes(term: string): Observable<Hero[]> {
+  //   if(!term.trim()) {
+  //     return of([]);
+  //   }
+  //   return this
+  // }
+
+  // get heroes
   getHeroes():Observable<Hero[]> {
     return of(HEREOS);
   }
+
+  
 }

@@ -1,12 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Hero } from '../hero';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-star-rate',
   templateUrl: './star-rate.component.html',
   styleUrls: ['./star-rate.component.scss']
 })
-export class StarRateComponent implements OnInit {
+export class StarRateComponent implements OnInit,OnChanges{
 
   @Input() heroRate:number;
   constructor() { }
@@ -16,14 +15,14 @@ export class StarRateComponent implements OnInit {
   hoverState = 0;
 
   ngOnInit(): void {
-    console.log(this.heroRate);
-    this.rating = this.heroRate;
   }
 
+ngOnChanges(){
+  this.rating = this.heroRate;
+} 
+
   enter(i: any) {
-    if (this.heroRate == null) {
-      this.hoverState = i;
-    }
+      // this.hoverState = i;
   }
 
   leave() {

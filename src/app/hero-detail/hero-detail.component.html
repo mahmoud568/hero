@@ -1,4 +1,4 @@
-<div class="row" *ngIf="hero">
+<!-- <div class="row" *ngIf="hero">
     <div class="col-12">
         <h2>{{ hero.name | uppercase }} Detail</h2>
     </div>
@@ -13,5 +13,28 @@
     </div>
     <div class="col-12">
         <div><span>rate: </span>{{ hero.rate }}</div>
+    </div>
+</div> -->
+
+<div class="row" *ngIf="hero">
+    <div class="prof col-12">
+        <div class="container">
+            <img src="assets/person-fill.svg" alt="prof-pic">
+        </div>
+    </div>
+    <div class="col-12 d-flex justify-content-center">
+        <h2>{{ hero.name | uppercase }} Details</h2>
+    </div>
+    <div class="col-12">
+        <div><span>id: </span>{{ hero.id }}</div>
+    </div>
+    <div class="col-12">
+        <div><span>name: </span>{{ hero.name }}</div>
+    </div>
+    <div class="col-12">
+        <div><span>powers: </span>{{ hero.powers }}</div>
+    </div>
+    <div class="col-12">
+        <app-star-rate [heroRate]="hero.rate"></app-star-rate>
     </div>
 </div>
