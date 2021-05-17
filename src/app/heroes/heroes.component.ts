@@ -12,7 +12,6 @@ export class HeroesComponent implements OnInit, OnChanges{
   heroRate: number;
   @Input() passedSort :string;
   
-
   @Input() selectedHero: Hero;
 
   constructor(private heroService: HeroService) { }
@@ -46,20 +45,5 @@ export class HeroesComponent implements OnInit, OnChanges{
     this.heroRate = hero.rate;
   }
 
-  // stars=[1,2,3,4,5];
-  // rating = 0;
-  // hoverState = 0;
-  // enter(i: any) {
-  //   this.hoverState = i;
-  // }
-
-  // leave() {
-  //   this.hoverState = 0;
-  // }
-
-  // updateRating(i:any) {
-  //   this.rating = i;
-  //   console.log(this.rating);
-  // }
 
 }

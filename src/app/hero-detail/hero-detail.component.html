@@ -1,22 +1,4 @@
-<!-- <div class="row" *ngIf="hero">
-    <div class="col-12">
-        <h2>{{ hero.name | uppercase }} Detail</h2>
-    </div>
-    <div class="col-12">
-        <div><span>id: </span>{{ hero.id }}</div>
-    </div>
-    <div class="col-12">
-        <div><span>name: </span>{{ hero.name }}</div>
-    </div>
-    <div class="col-12">
-        <div><span>powers: </span>{{ hero.powers }}</div>
-    </div>
-    <div class="col-12">
-        <div><span>rate: </span>{{ hero.rate }}</div>
-    </div>
-</div> -->
-
-<div class="row" *ngIf="hero">
+<!-- <div class="row">
     <div class="prof col-12">
         <div class="container">
             <img src="assets/person-fill.svg" alt="prof-pic">
@@ -36,5 +18,39 @@
     </div>
     <div class="col-12">
         <app-star-rate [heroRate]="hero.rate"></app-star-rate>
+    </div>
+</div> -->
+
+<div class="container d-flex justify-content-center">
+    <div class="card">
+        <div class="d-flex justify-content-center">
+
+            <div class="imgcon d-flex justify-content-center">
+                <img src="assets/person-fill.svg" alt="prof-pic">
+            </div>
+        </div>
+        <div class="desc">
+            <div class="row">
+                <div class="col-4">Hero Name :</div>
+                <div class="col-7 mx-auto">{{ hero.name }}</div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    Description
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-12">
+                    Powers
+                </div>
+                <div class="col-12">
+                    {{ hero.powers }}
+                </div>
+            </div>
+        </div>
     </div>
 </div>

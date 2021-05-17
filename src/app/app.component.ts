@@ -15,8 +15,4 @@ export class AppComponent {
   this.sortBy = event;
   }
 
-  selecteHero(hero: Hero){
-    this.selectedHero = hero;
-    
-  }
 }

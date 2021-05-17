@@ -10,7 +10,6 @@ import { HeroService } from '../heroes/hero.service';
 export class HeroSearchComponent implements OnInit {
   heroes:Hero[];
   name: string;
-  @Output() selectedHero = new EventEmitter;
 
   constructor(private heroService: HeroService) { }
 
@@ -24,12 +23,10 @@ export class HeroSearchComponent implements OnInit {
   Search() {
     if(this.name != ""){
     this.heroes= this.heroes.filter(filter => {return filter.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase())});
-    } else if (this.name =="") {
+    } else if (this.name == "") {
       this.ngOnInit();
     }
   }
 
-  onSelect(hero: any){
-    this.selectedHero.emit(hero);
-  }
+  
 }

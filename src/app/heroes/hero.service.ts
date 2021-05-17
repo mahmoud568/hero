@@ -8,21 +8,19 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class HeroService {
-
+  heroes: Hero[];
+  selectedHero: any;
   constructor() { }
-
-  // search by name
-  // searchHeroes(term: string): Observable<Hero[]> {
-  //   if(!term.trim()) {
-  //     return of([]);
-  //   }
-  //   return this
-  // }
 
   // get heroes
   getHeroes():Observable<Hero[]> {
     return of(HEREOS);
   }
 
+  getHero(id: number) {
+    this.heroes = HEREOS;
+    this.selectedHero = this.heroes.find(x => x.id == id);
+    return this.selectedHero;
+  }
   
 }

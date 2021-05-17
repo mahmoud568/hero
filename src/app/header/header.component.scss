@@ -1,11 +1,23 @@
 // chech switcher style
-nav {
-  top: -10px;
-  .sortBy {
-    width: 110px;
+
+.container-fluid {
+  border: rgb(0, 0, 0, 0.3) 2px solid;
+  width: 100%;
+  margin: 10px;
+  padding: 20px;
+
+  .head {
+    cursor: pointer;
+    margin-top: -10px;
+    margin-bottom: 25px;
   }
   .row {
+    margin-bottom: 10px;
+    img {
+      height: 25px;
+    }
     .switch {
+      margin-right: 100px;
       position: relative;
       display: inline-block;
       width: 60px;

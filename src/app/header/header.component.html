@@ -1,33 +1,39 @@
-<!-- 
-<div class="container bg-light">
-    <div class="row">
-        <div class="col-6">Filters</div>
-        <div class="col-6"><img src="assets/down-arrow-icon.png" width="15px" alt=""></div>
+<div class="container-fluid" [@openClose]="!colapsed ? 'open' : 'closed'">
+
+
+    <div class="head d-flex justify-content-between" (click)="colapse()">
+        <div>Filters</div>
+        <img style="height: 25px;" src="/assets/filter.svg" alt="filter">
     </div>
 
-    
-    
-</div> -->
+    <div *ngIf="!colapsed">
+        <div class="row px-2">
+            <app-hero-search></app-hero-search>
+        </div>
+        <div class="row d-flex">
+            <div class="px-2">
+                <p class="sortBy">sort by {{ sortby }}</p>
+            </div>
+            <div class="px-2">
+                <label class="switch">
+                    <input type="checkbox" (click)="switchCheckBox()">
+                    <span class="slider round"></span>
 
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 
 <nav class="navbar navbar-expand navbar-light bg-light">
+
     <a class="navbar-brand" href="#">Navbar</a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown">
-                    Filters
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
 
-        </ul>
-        <div class="row bg-light mr-auto  pt-4">
+        <div class="row bg-light">
             <div class="col-6">
                 <p class="sortBy">sort by : {{ sortby }}</p>
             </div>
@@ -40,7 +46,7 @@
             </div>
         </div>
         <div class="row">
-            <app-hero-search (selectedHero)="selecteHero($event)"></app-hero-search>
+            <app-hero-search></app-hero-search>
         </div>
     </div>
-</nav>
+</nav> -->

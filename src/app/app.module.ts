@@ -12,6 +12,9 @@ import { RatingModule } from 'ng-starrating';
 import { StarRateComponent } from './heroes/star-rate/star-rate.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { HeroesStartComponent } from './heroes/heroes-start/heroes-start.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,13 +25,15 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     StarComponent,
     StarRateComponent,
     HeroDetailComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    HeroesStartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RatingModule
+    RatingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,16 +1,41 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Hero } from '../heroes/hero';
 
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  // ...
+} from '@angular/animations';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  animations: [
+    trigger('openClose', [
+      // ...
+      state('open', style({
+        height:"200px",
+        overflow: "hidden"
+      })),
+      state('closed', style({
+        height:"20px",
+        overflow: "hidden"
+      })),
+      transition('open => closed', [
+        animate('.5s')
+      ]),
+      transition('closed => open', [
+        animate('.5s')
+      ]),
+    ]),
+  ],
 })
 export class HeaderComponent implements OnInit {
   sortby:string = "Name";
-
+  colapsed:boolean = false;
   @Output() changedSort = new EventEmitter<string>();
-  @Output() selectedHero = new EventEmitter<Hero>();
  
   constructor() { }
 
@@ -27,8 +52,8 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  selecteHero(hero: Hero){
-    this.selectedHero.emit(hero);
+  colapse(){
+   this.colapsed = !this.colapsed;
   }
 
 }
