@@ -1,14 +1,4 @@
 #search-component {
-  input,
-  li {
-    width: 188px;
-    @media only screen and (max-width: 900px) and (min-width: 768px) {
-      width: 100px;
-    }
-    @media only screen and (max-width: 1010px) and (min-width: 900px) {
-      width: 140px;
-    }
-  }
   li {
     list-style-type: none;
   }

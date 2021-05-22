@@ -11,9 +11,9 @@
                 </thead>
                 <tbody>
 
-                    <tr [routerLink]="['/details', hero.id]" *ngFor="let hero of heroes" (click)="onSelect(hero)"
-                        style="cursor: pointer;">
-                        <td>{{hero.name}}</td>
+                    <tr *ngFor="let hero of heroes" (click)="onSelect(hero)">
+                        <td class="name" [routerLink]="['/details', hero.id]" style="cursor: pointer;">{{hero.name}}
+                        </td>
                         <td>{{hero.powers}}</td>
                         <td>
                             <app-star-rate [heroRate]="hero.rate"></app-star-rate>
@@ -26,9 +26,8 @@
         </div>
 
         <div class="col-md-12 d-sm-block d-md-none">
-            <table class="table table-sm table-hover" [routerLink]="['/details', hero.id]" *ngFor="let hero of heroes"
-                (click)="onSelect(hero)" style="cursor: pointer;">
-                <tr>
+            <table class="table table-sm table-hover" *ngFor="let hero of heroes" (click)="onSelect(hero)">
+                <tr [routerLink]="['/details', hero.id]" style="cursor: pointer;">
                     <th scope="col">Hero Name</th>
                     <td>{{hero.name}}</td>
                 </tr>

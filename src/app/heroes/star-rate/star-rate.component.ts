@@ -8,7 +8,7 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
 export class StarRateComponent implements OnInit,OnChanges{
 
   @Input() heroRate:number;
-  constructor() { }
+  constructor( ) { }
 
   rating = 0;
   stars=[1,2,3,4,5];
@@ -22,7 +22,8 @@ ngOnChanges(){
 } 
 
   enter(i: any) {
-      // this.hoverState = i;
+      this.hoverState = i;
+
   }
 
   leave() {
@@ -30,8 +31,8 @@ ngOnChanges(){
   }
 
   updateRating(i:any) {
-    if (this.heroRate == null) {
-      this.rating = i;
-    }
+   
+    this.rating = i;
+
   }
 }

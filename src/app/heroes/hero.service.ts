@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Hero } from './hero';
 import { HEREOS } from './mock-heroes';
 
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +10,13 @@ import { Observable, of } from 'rxjs';
 export class HeroService {
   heroes: Hero[];
   selectedHero: any;
+  filter: string;
+  filterdHeroes = new BehaviorSubject<Hero[]>(HEREOS);
   constructor() { }
 
   // get heroes
   getHeroes():Observable<Hero[]> {
-    return of(HEREOS);
+    return this.filterdHeroes;
   }
 
   getHero(id: number) {
@@ -23,4 +25,8 @@ export class HeroService {
     return this.selectedHero;
   }
   
+  heroSearch(name: string) {
+    this.heroes = HEREOS;
+    this.filterdHeroes.next( this.heroes.filter(filter => {return filter.name.toLocaleLowerCase().match(name.toLocaleLowerCase())}));
+  }
 }

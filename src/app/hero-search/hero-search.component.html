@@ -1,12 +1,4 @@
 <div id="search-component">
-    <input class="form-control " type="search" placeholder="Search" [(ngModel)]="name" (input)="Search()" />
-    <div>
-        <ul class="search-result" *ngIf="name">
-            <li *ngFor="let hero of heroes">
-                <a routerLink="/details/{{hero.id}}">
-                    {{hero.name}}
-                </a>
-            </li>
-        </ul>
-    </div>
+    <input class="form-control " type="search" placeholder="Search" [(ngModel)]="name" (input)="Search(name=name)" />
+
 </div>

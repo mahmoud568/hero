@@ -20,12 +20,9 @@ export class HeroSearchComponent implements OnInit {
   getHeroes(){
     this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
-  Search() {
-    if(this.name != ""){
-    this.heroes= this.heroes.filter(filter => {return filter.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase())});
-    } else if (this.name == "") {
-      this.ngOnInit();
-    }
+  Search(name: string) {
+   this.heroService.heroSearch(name);
+  //  this.heroes = this.heroService.filterdHeroes;
   }
 
   
