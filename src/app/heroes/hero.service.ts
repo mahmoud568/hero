@@ -10,7 +10,6 @@ import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 export class HeroService {
   heroes: Hero[];
   selectedHero: any;
-  filter: string;
   filterdHeroes = new BehaviorSubject<Hero[]>(HEREOS);
   constructor() { }
 

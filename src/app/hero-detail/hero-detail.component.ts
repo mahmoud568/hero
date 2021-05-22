@@ -16,9 +16,7 @@ export class HeroDetailComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private router: Router,
     private heroService: HeroService) 
-  {   
-    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-  }
+  { }
 
   ngOnInit(): void {
     this.heroes = HEREOS;

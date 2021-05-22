@@ -7,14 +7,13 @@ import { Hero } from '../heroes/hero';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  sortBy: string;
+  selectedHero: Hero;
+  
   constructor() { }
 
   ngOnInit(): void {
   }
-
-  sortBy: string;
-   selectedHero: Hero;
   
   changeSort(event: string) {
   this.sortBy = event;

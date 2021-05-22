@@ -12,7 +12,7 @@ export class HeroesComponent implements OnInit, OnChanges{
   heroRate: number;
   @Input() passedSort :string;
   
-  @Input() selectedHero: Hero;
+  selectedHero: Hero;
 
   constructor(private heroService: HeroService) { }
 
@@ -29,15 +29,14 @@ export class HeroesComponent implements OnInit, OnChanges{
     if(sortBY == "Name") {
       this.heroes.sort((a, b) => (a.name > b.name) ? 1 : -1);
     }
-    else{
+    else if(sortBY == "Power"){
       this.heroes.sort((a, b) => (a.powers.length > b.powers.length) ? 1 : -1);
     }
   }
 
 
   getHeroes() {
-    this.heroService.getHeroes().subscribe(heroes => {this.heroes = heroes;this.sortHeroes("Name");});
-    
+    this.heroService.getHeroes().subscribe(heroes => {this.heroes = heroes;});
   }
 
   onSelect(hero: Hero){

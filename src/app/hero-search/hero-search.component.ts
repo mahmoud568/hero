@@ -8,18 +8,14 @@ import { HeroService } from '../heroes/hero.service';
   styleUrls: ['./hero-search.component.scss']
 })
 export class HeroSearchComponent implements OnInit {
-  heroes:Hero[];
   name: string;
 
   constructor(private heroService: HeroService) { }
 
   ngOnInit(): void {
-    this.getHeroes();
   }
 
-  getHeroes(){
-    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
-  }
+  
   Search(name: string) {
    this.heroService.heroSearch(name);
   //  this.heroes = this.heroService.filterdHeroes;
